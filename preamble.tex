@@ -1,0 +1,60 @@
+% Lingua
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{libertinus}
+% \usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[normalem]{ulem}
+\usepackage{csquotes}
+
+\usepackage{epigraph}
+\setlength{\epigraphwidth}{0.5\textwidth}
+% Layout
+\usepackage{geometry}
+\geometry{
+  a4paper,
+  top=30mm,
+  bottom=30mm,
+  left=30mm,
+  right=30mm
+}
+
+\setlength\parindent{0pt}
+
+% Matematica
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage[makeroom]{cancel}
+\usepackage{amssymb}
+\usepackage{faktor} % per il simbolo del quoziente
+% \usepackage{mathabx} % per il simbolo dell'asterisco
+
+% Liste e figures
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{placeins}
+
+\graphicspath{ {./images/} }
+
+% Bibliografia
+\usepackage[
+  backend=biber,
+  style=alphabetic
+]{biblatex}
+
+\addbibresource{references.bib}
+
+% Hyperlinks e numerazione automatica
+\usepackage[hidelinks]{hyperref}
+\setcounter{tocdepth}{3}
+
+% Colori per i commenti
+\usepackage{xcolor}
+
+% Alcune macro
+\newcommand{\Sym}{\text{Sym}}
+\newcommand{\gen}[1]{\langle #1 \rangle}
+\NewDocumentCommand{\ngen}{m g}{
+  \langle\!\langle #1 \rangle\!\rangle_{\IfNoValueTF{#2}{}{#2}}
+}
+\newcommand{\pres}[2]{\langle #1\mid #2 \rangle}

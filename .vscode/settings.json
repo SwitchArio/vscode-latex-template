@@ -1,0 +1,29 @@
+{
+  "hsnips.hsnipsPath": "${workspaceFolder}/.vscode/hsnips",
+
+  "latex-workshop.latex.outDir": "%DIR%/build",
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.view.pdf.viewer": "tab",
+
+  "files.exclude": {
+    "**/build": true
+  },
+
+  "editor.wordWrap": "on",
+
+  "[latex]": {
+    "editor.tabCompletion": "off",
+    "editor.snippetSuggestions": "none",
+
+    "editor.quickSuggestions": {
+      "other": "off",
+      "comments": "off",
+      "strings": "off"
+    },
+
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.wordBasedSuggestions": "off",
+    "editor.inlineSuggest.enabled": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": true
+  }
+}

@@ -1,0 +1,558 @@
+global
+function math(context) {
+  return context.scopes.some(scope => scope.startsWith("meta.math"));
+}
+endglobal
+
+# =============================================================================
+# STANDARD MATHEMATICAL NOTATION
+# All snippets in this section expand automatically inside math environments.
+# =============================================================================
+
+context math(context)
+snippet RR "Real numbers" wA
+\mathbb{R}
+endsnippet
+
+context math(context)
+snippet NN "Natural numbers" wA
+\mathbb{N}
+endsnippet
+
+context math(context)
+snippet ZZ "Integer numbers" wA
+\mathbb{Z}
+endsnippet
+
+context math(context)
+snippet CC "Complex numbers" wA
+\mathbb{C}
+endsnippet
+
+context math(context)
+snippet KK "Scalar field" wA
+\mathbb{K}
+endsnippet
+
+context math(context)
+snippet BB "Calligraphic B" wA
+\mathcal{B}
+endsnippet
+
+context math(context)
+snippet CCC "Calligraphic C" wA
+\mathcal{C}
+endsnippet
+
+# =============================================================================
+# MATHEMATICAL TEMPLATES
+# Expansion is automatic. Tab only moves through the editable positions.
+# =============================================================================
+
+context math(context)
+snippet dprod "Inner product" wA
+\left\langle $1, $2 \right\rangle$0
+endsnippet
+
+context math(context)
+snippet frac "Fraction" wA
+\frac{$1}{$2}$0
+endsnippet
+
+context math(context)
+snippet sq "Square root" wA
+\sqrt{$1}$0
+endsnippet
+
+context math(context)
+snippet sum "Summation" wA
+\sum_{$1}^{$2} $0
+endsnippet
+
+context math(context)
+snippet int "Definite integral" wA
+\int_{$1}^{$2} $0
+endsnippet
+
+# =============================================================================
+# LOWERCASE GREEK LETTERS
+# =============================================================================
+
+context math(context)
+snippet alpha "Lowercase alpha" wA
+\alpha
+endsnippet
+
+context math(context)
+snippet beta "Lowercase beta" wA
+\beta
+endsnippet
+
+context math(context)
+snippet gamma "Lowercase gamma" wA
+\gamma
+endsnippet
+
+context math(context)
+snippet delta "Lowercase delta" wA
+\delta
+endsnippet
+
+context math(context)
+snippet eps "Lowercase epsilon" wA
+\epsilon
+endsnippet
+
+context math(context)
+snippet zeta "Lowercase zeta" wA
+\zeta
+endsnippet
+
+context math(context)
+snippet eta "Lowercase eta" wA
+\eta
+endsnippet
+
+context math(context)
+snippet theta "Lowercase theta" wA
+\theta
+endsnippet
+
+context math(context)
+snippet iota "Lowercase iota" wA
+\iota
+endsnippet
+
+context math(context)
+snippet kappa "Lowercase kappa" wA
+\kappa
+endsnippet
+
+context math(context)
+snippet lambda "Lowercase lambda" wA
+\lambda
+endsnippet
+
+context math(context)
+snippet mu "Lowercase mu" wA
+\mu
+endsnippet
+
+context math(context)
+snippet nu "Lowercase nu" wA
+\nu
+endsnippet
+
+context math(context)
+snippet xi "Lowercase xi" wA
+\xi
+endsnippet
+
+context math(context)
+snippet pi "Lowercase pi" wA
+\pi
+endsnippet
+
+context math(context)
+snippet rho "Lowercase rho" wA
+\rho
+endsnippet
+
+context math(context)
+snippet sigma "Lowercase sigma" wA
+\sigma
+endsnippet
+
+context math(context)
+snippet tau "Lowercase tau" wA
+\tau
+endsnippet
+
+context math(context)
+snippet phi "Lowercase phi" wA
+\phi
+endsnippet
+
+context math(context)
+snippet chi "Lowercase chi" wA
+\chi
+endsnippet
+
+context math(context)
+snippet psi "Lowercase psi" wA
+\psi
+endsnippet
+
+context math(context)
+snippet omega "Lowercase omega" wA
+\omega
+endsnippet
+
+# Common lowercase variants
+context math(context)
+snippet vareps "Variant epsilon" wA
+\varepsilon
+endsnippet
+
+context math(context)
+snippet vartheta "Variant theta" wA
+\vartheta
+endsnippet
+
+context math(context)
+snippet varpi "Variant pi" wA
+\varpi
+endsnippet
+
+context math(context)
+snippet varrho "Variant rho" wA
+\varrho
+endsnippet
+
+context math(context)
+snippet varsigma "Variant sigma" wA
+\varsigma
+endsnippet
+
+context math(context)
+snippet varphi "Variant phi" wA
+\varphi
+endsnippet
+
+# =============================================================================
+# UPPERCASE GREEK LETTERS
+# Distinct Greek glyphs use LaTeX commands. Letters identical to Latin glyphs
+# expand to the corresponding standard Latin character.
+# =============================================================================
+
+
+context math(context)
+snippet Gamma "Uppercase gamma" wA
+\Gamma
+endsnippet
+
+context math(context)
+snippet Delta "Uppercase delta" wA
+\Delta
+endsnippet
+
+context math(context)
+snippet Theta "Uppercase theta" wA
+\Theta
+endsnippet
+
+context math(context)
+snippet Lambda "Uppercase lambda" wA
+\Lambda
+endsnippet
+
+context math(context)
+snippet Xi "Uppercase xi" wA
+\Xi
+endsnippet
+
+context math(context)
+snippet Pi "Uppercase pi" wA
+\Pi
+endsnippet
+
+context math(context)
+snippet Sigma "Uppercase sigma" wA
+\Sigma
+endsnippet
+
+context math(context)
+snippet Upsilon "Uppercase upsilon" wA
+\Upsilon
+endsnippet
+
+context math(context)
+snippet Phi "Uppercase phi" wA
+\Phi
+endsnippet
+
+context math(context)
+snippet Psi "Uppercase psi" wA
+\Psi
+endsnippet
+
+context math(context)
+snippet Omega "Uppercase omega" wA
+\Omega
+endsnippet
+
+# =============================================================================
+# AUTOMATIC SUBSCRIPTS
+# Numeric subscripts grow one digit at a time, so x87 becomes x_{87}.
+# Common symbolic subscripts are enabled for x, y, z, v, and w.
+# =============================================================================
+
+context math(context)
+snippet `(?<![A-Za-z\\])([xyzvwas])([0-9])` "Start numeric subscript" A
+``rv = m[1]``_``rv = m[2]``$0
+endsnippet
+
+context math(context)
+snippet `(?<![A-Za-z\\])([xyzvwaXYZVW])([jkmni])` "Common symbolic subscript" A
+``rv = m[1]``_``rv = m[2]``$0
+endsnippet
+
+context math(context)
+snippet `\^\^` "Superscript" A
+^{$1}$0
+endsnippet
+
+context math(context)
+snippet `([a-zA-Z0-9])\_\_` "Underscript" A
+``rv = m[1]``_{$1}$0
+endsnippet
+
+context math(context)
+snippet `(?<![A-Za-z\\\_])in` "Set membership" A
+\in 
+endsnippet
+
+context math(context)
+snippet `(?<![A-Za-z\\])notin` "Set non-membership" A
+\notin 
+endsnippet
+
+context math(context)
+snippet `(?<![a-z\\])to` "Arrow" A
+\to 
+endsnippet
+
+context math(context)
+snippet `(?<![a-z\\])mapsto` "element arrow" A
+\mapsto 
+endsnippet
+
+context math(context)
+snippet `(?<![A-Za-z\\])dots` "dots" A
+\dots
+endsnippet
+
+context math(context)
+snippet `(?<![A-Za-z\\])vdots` "vdots" A
+\vdots
+endsnippet
+
+context math(context)
+snippet `(?<![A-Za-z\\])cdots` "cdots" A
+\cdots
+endsnippet
+
+context math(context)
+snippet `(?<![A-Za-z\\])cdot` "cdot" A
+\cdot
+endsnippet
+
+
+# =============================================================================
+# DOCUMENT STRUCTURE
+# The leading semicolon prevents accidental expansion while writing Italian.
+# Expansion is automatic at the beginning of a line.
+# =============================================================================
+
+snippet mk "Inline Latex" A
+\$$1\$ $0
+endsnippet
+
+snippet dm "Multiple line Latex" A
+\$\$ 
+    $1
+\$\$ 
+$0
+endsnippet
+
+snippet \\ "VSpace" A
+\\\\[$1pt]
+$0
+endsnippet
+
+
+
+snippet ;sec "Section" bA
+\section{$1}
+$0
+endsnippet
+
+snippet eq "Numbered equation" bA
+\begin{equation}
+    $1
+\end{equation}
+$0
+endsnippet
+
+
+snippet ;teo "Theorem with table of contents entry" bA
+\begin{teo}[$1]
+\addcontentsline{toc}{subsubsection}{Teorema: $1}
+$0
+\end{teo}
+endsnippet
+
+snippet ;*teo "Theorem without table of contents entry" bA
+\begin{teo}[$1]
+$0
+\end{teo}
+endsnippet
+
+
+snippet ;def "Definition with table of contents entry" bA
+\begin{defin}[$1]
+\addcontentsline{toc}{subsubsection}{Definizione: $1}
+$0
+\end{defin}
+endsnippet
+
+snippet ;*def "Definition without table of contents entry" bA
+\begin{defin}[$1]
+$0
+\end{defin}
+endsnippet
+
+
+snippet ;lem "Lemma with table of contents entry" bA
+\begin{lemma}[$1]
+\addcontentsline{toc}{subsubsection}{Lemma: $1}
+$0
+\end{lemma}
+endsnippet
+
+snippet ;*lem "Lemma without table of contents entry" bA
+\begin{lemma}[$1]
+$0
+\end{lemma}
+endsnippet
+
+
+snippet ;prop "Proposition with table of contents entry" bA
+\begin{prop}[$1]
+\addcontentsline{toc}{subsubsection}{Proposizione: $1}
+$0
+\end{prop}
+endsnippet
+
+snippet ;*prop "Proposition without table of contents entry" bA
+\begin{prop}[$1]
+$0
+\end{prop}
+endsnippet
+
+
+snippet ;cor "Corollary with table of contents entry" bA
+\begin{corollario}[$1]
+\addcontentsline{toc}{subsubsection}{Corollario: $1}
+$0
+\end{corollario}
+endsnippet
+
+snippet ;*cor "Corollary without table of contents entry" bA
+\begin{corollario}[$1]
+$0
+\end{corollario}
+endsnippet
+
+
+snippet ;esem "Example with table of contents entry" bA
+\begin{esempio}[$1]
+\addcontentsline{toc}{subsubsection}{Esempio: $1}
+$0
+\end{esempio}
+endsnippet
+
+snippet ;*esem "Example without table of contents entry" bA
+\begin{esempio}[$1]
+$0
+\end{esempio}
+endsnippet
+
+
+snippet ;eser "Exercise with table of contents entry" bA
+\begin{esercizio}[$1]
+\addcontentsline{toc}{subsubsection}{Esercizio: $1}
+$0
+\end{esercizio}
+endsnippet
+
+snippet ;*eser "Exercise without table of contents entry" bA
+\begin{esercizio}[$1]
+$0
+\end{esercizio}
+endsnippet
+
+
+snippet ;oss "Remark with table of contents entry" bA
+\begin{oss}[$1]
+\addcontentsline{toc}{subsubsection}{Osservazione: $1}
+$0
+\end{oss}
+endsnippet
+
+snippet ;*oss "Remark without table of contents entry" bA
+\begin{oss}[$1]
+$0
+\end{oss}
+endsnippet
+
+snippet ;dim "Proof" bA
+\begin{proof}
+    $0
+\end{proof}
+endsnippet
+
+snippet ;align "Aligned equations" bA
+\begin{align*}
+    $0
+\end{align*}
+endsnippet
+
+snippet ;beg "begin" bA
+\begin{$1}
+    $0
+\end{$1}
+endsnippet
+
+# =============================================================================
+# OPTIONAL HIGHLIGHTED BOXES
+# =============================================================================
+
+snippet ;nero "Black box" bA
+\begin{blackbox}
+    $0
+\end{blackbox}
+endsnippet
+
+snippet ;rosso "Red dashed box" bA
+\begin{redbox}
+    $0
+\end{redbox}
+endsnippet
+
+snippet ;blu "Blue dashed box" bA
+\begin{bluebox}
+    $0
+\end{bluebox}
+endsnippet
+
+snippet ;dumm "Dummit and Foote source" bA
+\begin{sourcebox}{\citeauthor{dummit-foote}, \S~$1, pp.~$2--$3 }
+    $4
+\end{sourcebox}
+$0
+endsnippet
+
+snippet ;rotm "Rotman source" bA
+\begin{sourcebox}{\citeauthor{rotman-free-groups}, \S~$1, pp.~$2--$3 }
+    $4
+\end{sourcebox}
+$0
+endsnippet
+
+snippet ;robi "Robinson source" bA
+\begin{sourcebox}{\citeauthor{robinson-free-groups-presentation}, \S~$1, pp.~$2--$3 }
+    $4
+\end{sourcebox}
+$0
+endsnippet
