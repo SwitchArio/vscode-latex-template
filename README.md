@@ -1,7 +1,7 @@
 # GitHub & VS Code Setup Guide
 
-1. [Extensions & GitHub Auth](##Extensions-&-GitHub-Authentication)
-2. [Workflow](##Workflow)
+1. [Extensions & GitHub Auth](##extensions-&-gitHub-authentication)
+2. [Workflow](##workflow)
 
 ---
 
