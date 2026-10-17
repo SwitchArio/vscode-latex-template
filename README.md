@@ -39,8 +39,11 @@ You can connect any repository you prefer. To follow this specific workflow:
 4. In the Source Control panel, navigate to `Repositories` > `[Folder Name]` > `...` (More Actions) > `Remote` > `Add Remote...` > `From GitHub`.
 5. Select your target repository (see 3. in Templates) and name the remote `origin`.
 
-**If** the repository was **empty**:
+If the repository was **empty**
+
 6. Commit and push your changes (the default branch will be set to `main`).
-**Else:**
+
+Otherwise
+
 6. Fetch and Pull.
 
