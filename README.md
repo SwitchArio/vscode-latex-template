@@ -17,7 +17,7 @@ Before starting, make sure you have installed the following extensions in Visual
 
 To authenticate your GitHub account in VS Code:
 
-1. Click the **`< >`** icon in the bottom-left corner of VS Code.
+1. Click the **`> <`** icon in the bottom-left corner of VS Code.
 2. Select **Open Remote Repository**.
 3. Follow the on-screen prompts to complete authentication.
 
