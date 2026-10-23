@@ -9,6 +9,7 @@
 
 % Font
 \usepackage{libertinus}
+% \usepackage{mathpazo}
 % \usepackage{lmodern}
 
 % Layout
@@ -55,17 +56,14 @@
 \colorlet{myblue}{blue!70!black}
 \colorlet{myred}{red!70!black}
 
-\newtcolorbox{mystarthighlight}{
-    enhanced, frame hidden,
-    colback=blue!3, colupper=myblue,
-    left=2pt, right=0pt,
+\newtcolorbox{highlight}{
+    enhanced,
+    colback=blue!3,
+    colupper=myblue,
+    frame hidden,
+    left=2pt,
+    right=0pt,
     borderline west={1.5pt}{0pt}{myblue},
-}
-
-\newtcolorbox{myendhighlight}{
-    enhanced, frame hidden,
-    left=8pt, right=0pt,
-    borderline west={1pt}{0pt}{black, dashed},
 }
 
 % PARAMETRI TCOLORBOX
@@ -129,21 +127,29 @@
 }
 \newcommand{\pres}[2]{\langle #1\mid #2 \rangle}
 \newcommand{\mylink}[1]{\href{#1}{[\textbf{link}]}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
 
 
 %  Numerazione teoremi
 \theoremstyle{plain}
 \newtheorem{teo}{Teorema}[section]
+\newtheorem*{teo*}{Teorema}
 \newtheorem{prop}[teo]{Proposizione}
 \newtheorem{corollario}[teo]{Corollario}
+\newtheorem*{corollario*}{Corollario}
 \newtheorem{lemma}[teo]{Lemma}
+\newtheorem{idea}[teo]{Idea}
+\newtheorem{esercizio}[teo]{Esercizio}
+\newtheorem*{eser*}{Esercizio}
+
 
 \theoremstyle{definition}
+\newtheorem{esempio}{Esempio}
+\newtheorem*{esempio*}{Esempio}
 \newtheorem{defin}[teo]{Definizione}
-\newtheorem{esempio}[teo]{Esempio}
-\newtheorem{esercizio}[teo]{Esercizio}
-
-\newtheorem{dimostrazione}{Dimostrazione}
 \newtheorem{oss}[teo]{Osservazione}
 
 
